@@ -1,5 +1,5 @@
 /*
- * BOOK 4 Project 6: Interactive LED Chase Effect
+ * BOOK 4 Project 6 Ex1: Interactive LED Bounce Effect
  */
  
 byte ledPin[] = {4, 5, 6, 7, 8, 9, 10, 11};
