@@ -58,8 +58,6 @@ int length;
 void setup() {
   pinMode(8, OUTPUT);
   length = sizeof(tune) / sizeof(tune[0]);
-
-  
   
   for (int x = 0; x < tuneSize ; x++) {
     tune[x] *= 2;
