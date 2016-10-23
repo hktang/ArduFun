@@ -21,10 +21,10 @@
  *     Q0-Q7    1-7   Parallel data out 1-7
  *     GND      08    Ground (0 V)
  *     Q7S      09    Serial data out
- *     MR       10    Master reset (active LOW)
+ *     !MR      10    Master reset (active LOW)
  *     SHCP     11    Shift register clock in
  *     STCP     12    Storage register clock in
- *     OE       13    Output enable input (active LOW)
+ *     !OE      13    Output enable input (active LOW)
  *     DS       14    Serial data in
  *     Q0       15    Parallel data out 0
  *     Vcc      16    Supply voltage
@@ -60,7 +60,7 @@ void shiftOut(byte dataOut){
 
     boolean pinState;
     digitalWrite(dataPin, LOW); //clear shift register for sending data
-    digitalWrite(clockPin, LOW);
+    digitalWrite(clockPin, LOW); 
 
     for(int i=0; i<8; i++){ 
       
@@ -68,7 +68,7 @@ void shiftOut(byte dataOut){
 
       digitalWrite(clockPin, LOW); //set clockPin to Low prior to sending bit
 
-      if (dataOut & 1 << i ){
+      if (dataOut & (1 << i) ){
 
         pinState = HIGH;
 
